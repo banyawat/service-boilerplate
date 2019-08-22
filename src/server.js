@@ -1,9 +1,11 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import CONFIG from './config'
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const { PORT = 5000 } = CONFIG
+
 app.use(
   bodyParser.json(),
   bodyParser.urlencoded({ extended: true }),

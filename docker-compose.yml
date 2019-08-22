@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    jongburn-service:
+        build: .
+        working_dir: /usr/app
+        image: node:10.16.0-alpine
+        command: ['/bin/sh', '-c', 'yarn && yarn dev']
+        environment:
+            ENV: 'local'
+            PORT: 5000
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/usr/app
